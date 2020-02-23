@@ -1,6 +1,6 @@
 from django.urls import path
 from django.views import generic
-
+from ..personas_naturales import urls
 from . import views
 from . import forms
 from .models import *
@@ -14,5 +14,5 @@ urlpatterns = [
     path("tipo-autocomplete/",views.TipoAutocomplete.as_view(model=TipoEmpresa,create_field="nombre"),name="tipo-autocomplete"),
     path("sector-autocomplete/",views.SectorAutocomplete.as_view(model=Sector,create_field="nombre"),name="sector-autocomplete"),
     path('empresa-autocomplete/',views.EmpresaAutocomplete.as_view(),name='empresa-autocomplete'),
-
 ]
+

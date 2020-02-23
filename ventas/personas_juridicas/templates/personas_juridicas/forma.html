@@ -3,6 +3,7 @@
 {% load crispy_forms_tags %}
 
 
+
 {% load static %}
 {% load staticfiles %}
 
@@ -81,55 +82,31 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="campo col-12 mt-2 p-2 pl-3 ">
-					<h5 class="black-text text-uppercase mb-0">Contacto empresa</h5>
+
+			{% block tablas %}
+
+			<div class="row mt-3">
+				<div class="col-12">
+				<button type="submit" class="btn btn-secondary green-bg">Siguiente</button>
+				<a class="btn btn-secondary" href="{% url 'index_juridicas' %}"> Cancelar </a>
 				</div>
 			</div>
+  			{% endblock tablas %}
 
-			<div class="form-row">
-				<div class="col-2 col-xl-2">
-					{{ form.contacto_cedula|as_crispy_field}}
-				</div>
 
-				<div class="col-5 col-xl-5">
+		
 
-					{{ form.contacto_nombres |as_crispy_field}}
-				</div>
 
-				<div class="col-5 col-xl-5">
-
-					{{ form.contacto_apellidos|as_crispy_field}}
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="col-6 col-xl-6">
-					{{ form.contacto_cargo |as_crispy_field}}
-				</div>
-				<div class="col-6 col-xl-6">
-
-					{{ form.contacto_correo |as_crispy_field}}
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="col-6 col-xl-6">
-
-					{{ form.contacto_telefono|as_crispy_field}}
-				</div>
-				<div class="col-6 col-xl-6">
-
-					{{ form.contacto_celular|as_crispy_field}}
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row mt-3">
+		
+		
+			
+	<!-- <div class="row mt-3">
 		<div class="col-12">
 			<button type="submit" class="btn btn-secondary green-bg">Guardar</button>
 			<a class="btn btn-secondary" href="{% url 'index_juridicas' %}"> Cancelar </a>
 		</div>
 	</div>
-	</div>
+	</div> -->
 	{{ form.media }}
 </form>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -1,4 +1,5 @@
 from django.db import models
+from ventas.personas_naturales.models import Persona_Natural
 import ventas.validaciones
 
 class Provincia(models.Model):
@@ -43,15 +44,15 @@ class Juridica(models.Model):
 	representante = models.CharField(max_length=250)
 	maximo_facturas = models.DateField()
 	forma_pago = models.ForeignKey(FormaPago, on_delete=models.SET_NULL, null=True)
+	#contacto_natural = models.ForeignKey(Persona_Natural,blank= True , on_delete=models.SET("0925353146"),default="0925353146")
 
-
-	contacto_cedula = models.CharField(max_length=13, validators=[ventas.validaciones.validate_cedula])
-	contacto_nombres = models.CharField(max_length=75, validators=[ventas.validaciones.validate_letras])
-	contacto_apellidos = models.CharField(max_length=75, validators=[ventas.validaciones.validate_letras])
-	contacto_cargo = models.CharField(max_length=150)
-	contacto_telefono = models.CharField(max_length=20, validators=[ventas.validaciones.validate_fono_convencional])
-	contacto_celular = models.CharField(max_length=20, validators=[ventas.validaciones.validate_celular])
-	contacto_correo = models.CharField(max_length=100)
+	# contacto_cedula = models.CharField(max_length=13, validators=[ventas.validaciones.validate_cedula])
+	# contacto_nombres = models.CharField(max_length=75, validators=[ventas.validaciones.validate_letras])
+	# contacto_apellidos = models.CharField(max_length=75, validators=[ventas.validaciones.validate_letras])
+	# contacto_cargo = models.CharField(max_length=150)
+	# contacto_telefono = models.CharField(max_length=20, validators=[ventas.validaciones.validate_fono_convencional])
+	# contacto_celular = models.CharField(max_length=20, validators=[ventas.validaciones.validate_celular])
+	# contacto_correo = models.CharField(max_length=100)
 
 	def __str__(self):
 		return self.nombre+" - "+self.ruc

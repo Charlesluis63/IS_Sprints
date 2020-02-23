@@ -37,7 +37,7 @@
         <div class="col-6 col-md-3 mb-0 " id="field-ruc-ci">
           <div id="div_id_ruc_ci" class="form-group">
             <label for="{{ form.ruc_ci.id_for_label}}" class="col-form-label requiredField"
-              id="ruc_ci">RUC/CI</label><span class="asteriskField">*</span>
+              id="ruc_ci"></label><span class="asteriskField">*</span>
             <div>
               {{ form.ruc_ci}}
               {% if form.ruc_ci.errors %}
@@ -83,6 +83,7 @@
           <label for="telefono" class="col-form-label">Teléfono</label>
           <input type="text" id="telefono" class="form-control" disabled>
         </div>
+        
         <input type="hidden" name="centro_costos" value='{{form.centro_costos.value}}' />
         <div class="col-6 col-md-2">{{ form.centro_costos|as_crispy_field }}</div>
         {% block n_par %}

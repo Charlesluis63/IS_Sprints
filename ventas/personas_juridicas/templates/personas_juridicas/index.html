@@ -73,28 +73,7 @@
 				</div>
 			</div>
 
-			<div class="form-row">
-				<div class="col-4 col-xl-4">
-					{{ filter.form.contacto_cedula|as_crispy_field }}
-				</div>
-				<div class="col-4 col-xl-4">
-					{{ filter.form.contacto_nombres|as_crispy_field }}
-				</div>
-				<div class="col-4 col-xl-4">
-					{{ filter.form.contacto_apellidos|as_crispy_field }}
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="col-4 col-xl-4">
-					{{ filter.form.contacto_telefono|as_crispy_field }}
-				</div>
-				<div class="col-4 col-xl-4">
-					{{ filter.form.contacto_celular|as_crispy_field }}
-				</div>
-				<div class="col-4 col-xl-4">
-					{{ filter.form.contacto_correo|as_crispy_field }}
-				</div>
-			</div>
+			
 
 			<button type="submit" class="btn btn-secondary green-bg float-right">
 				<i class="fas fa-search"></i> Buscar</button>
@@ -119,10 +98,10 @@
 					<th scope="col">Teléfono</th>
 					<th scope="col">Celular</th>
 					<th scope="col">Representante legal</th>
-					<th scope="col">Contacto </th>
+					<!-- <th scope="col">Contacto </th>
 					<th scope="col">Contacto Teléfono</th>
 					<th scope="col">Contacto Celular</th>
-					<th scope="col">Contacto Email</th>
+					<th scope="col">Contacto Email</th> --> 
 					<th scope="col">Acciones</th>
 				</tr>
 			</thead>
@@ -140,10 +119,10 @@
 					<td scope="row">{{j.telefono}}</td>
 					<td scope="row">{{j.celular}}</td>
 					<td scope="row">{{j.representante}}</td>
-					<td scope="row">{{j.contacto_nombres}} {{j.contacto_apellidos}}</td>
+					<!-- <td scope="row">{{j.contacto_nombres}} {{j.contacto_apellidos}}</td>
 					<td scope="row">{{j.contacto_telefono}}</td>
 					<td scope="row">{{j.contacto_celular}}</td>
-					<td scope="row">{{j.contacto_correo}}</td>
+					<td scope="row">{{j.contacto_correo}}</td> -->
 					<td scope="row">
 						<a class="btn btn-light btn-sm btn-block" href="{% url 'editar_juridica' pk=j.pk %}"><i
 								class="fas fa-edit darkgreen-text"></i></a>

@@ -3,3 +3,82 @@
 {% block regedit %}
 Edición Persona Jurídica
 {% endblock regedit %}
+
+{% block tablas %}
+<div class="row">
+    <div class="campo col-12 mt-2 p-2 pl-3 ">
+        <h5 class="black-text text-uppercase mb-0">Contacto empresa</h5>
+    </div>
+</div>
+<!-- "contacto_cedula",
+					"contacto_nombres",
+					"contacto_apellidos",
+					"contacto_cargo",
+					"contacto_telefono",
+					"contacto_celular",
+                    "contacto_correo" -->
+<!-- <div class="row my-3">
+    <div id="tabla" class="table-container col-12">
+        <table class="table border-bottom table-responsive table-sm">
+            <thead class="white-text darkgreen-bg"></thead>
+                <tr>
+                <th>Cedula</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Cargo</th>
+                <th>Teléfono</th>
+                <th>Celular</th>
+                <th>Correo</th>
+                <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div> -->
+<div class="row mt-4">
+	<div class="col-12 col-xl-12 table-container">
+		<table id="dtBasicExample" class="table table-responsive border-bottom">
+			<thead class="white-text darkgreen-bg">
+				<tr>
+					<th scope="col">Cedula</th>
+					<th scope="col">Nombres</th>
+					<th scope="col">Apellidos</th>
+					<th scope="col">Cargo</th>
+					<th scope="col">Contacto Teléfono</th>
+					<th scope="col">Contacto Celular</th>
+					<th scope="col">Contacto Email</th>
+				</tr>
+            </thead>
+            {% if naturales %}
+
+			<tbody>
+				{% for persona in naturales %}
+				<tr class="text-center">
+					<td scope="row">{{ persona.cedula }}</td>
+					<td scope="row">{{ persona.apellidos }}</td>
+					<td scope="row">{{ persona.nombres }}</td>
+					<td scope="row">{{ persona.fecha_nacimiento }}</td>
+					<td scope="row">{{ persona.tel_domicilio }}</td>
+					<td scope="row">{{ persona.celular }}</td>
+					<td scope="row">{{ persona.email }}</td>
+				</tr>
+				{% endfor%}
+			</tbody>
+			{% else %}
+			<h2>No hay elementos que mostrar</h2>
+			{% endif %}
+
+
+        </table>
+        <a class="btn btn-secondary green-bg" href="{% url 'natural_nuevo' %}" target="blank">Agregar contacto</a>
+    </div>
+    
+</div>
+<div class="row mt-3">
+    <div class="col-12">
+        <button type="submit" class="btn btn-secondary green-bg">Guardar</button>
+        <a class="btn btn-secondary" href="{% url 'index_juridicas' %}"> Cancelar </a>
+    </div>
+</div>
+</div> 
+{% endblock tablas %}

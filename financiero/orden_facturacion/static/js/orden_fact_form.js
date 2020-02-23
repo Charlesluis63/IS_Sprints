@@ -1,5 +1,4 @@
 var p_url = "";
-
 $('.select2').select2({
   minimumInputLength: 2,
   language: {
@@ -17,8 +16,7 @@ $('.select2').select2({
       return "Ingresa " + t + " caractéres para buscar";
     }
   }
-});
-
+}); 
 
 function load_info() {
   var url = $('#form-fact').attr("data-info-url");
@@ -35,6 +33,7 @@ function load_info() {
       'persona': $("#id_tipo_cliente").val(),
     },
     success: function (data) {
+      console.log(data["contacto"])
       flag=false;
       $("#contacto").val(data.contacto);
       $("#telefono").val(data.telefono);
